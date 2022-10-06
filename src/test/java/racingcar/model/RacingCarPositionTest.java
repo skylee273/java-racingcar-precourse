@@ -27,7 +27,7 @@ public class RacingCarPositionTest {
 
     @DisplayName("자동차 전진 후 스탑 테스트")
     @Test
-    public void validateCardMoveForwardAndMoveStopTest() {
+    public void validateCarMoveForwardAndMoveStopTest() {
         RacingCarPosition racingCarPosition = new RacingCarPosition(0);
         assertThat(racingCarPosition.moveForward()).isEqualTo(1);
         assertThat(racingCarPosition.moveStop()).isEqualTo(1);
@@ -36,10 +36,21 @@ public class RacingCarPositionTest {
     @DisplayName("자동차 위치 음수 값 오류")
     @ParameterizedTest
     @ValueSource(ints = {-1})
-    public void throwExceptionWhenCardPositionNegative(int input) {
+    public void throwExceptionWhenCarPositionNegative(int input) {
         assertThatIllegalArgumentException().isThrownBy(() -> {
             new RacingCarPosition(input);
         });
     }
+
+    @DisplayName("자동차 3회 전진 후 포지션 상태")
+    @Test
+    public void validateCarThreeMoveForwardPosition() {
+        RacingCarPosition racingCarPosition = new RacingCarPosition(0);
+        racingCarPosition.moveForward();
+        racingCarPosition.moveForward();
+        racingCarPosition.moveForward();
+        assertThat(racingCarPosition.toString()).isEqualTo("---");
+    }
+
 
 }
