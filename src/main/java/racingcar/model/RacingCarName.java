@@ -4,25 +4,31 @@ import java.util.Objects;
 
 public class RacingCarName {
 
-    public static final int MAX_CAR_NAME_INPUT = 5;
-    public static final int MIN_CAR_NAME_INPUT = 1;
+    private static final int MAX_CAR_NAME_INPUT = 5;
+    private static final int MIN_CAR_NAME_INPUT = 1;
+    private static final String CAR_NAME_BLANK = " ";
 
     private String carName;
 
     public RacingCarName(String carName){
         validateRacingCarNameNullAndEmpty(carName);
         validateRacingCarNameLengthFive(carName);
+        validateRacingCarNameBlank(carName);
         this.carName = carName;
     }
 
-    public static void validateRacingCarNameNullAndEmpty(String carName){
+    private static void validateRacingCarNameNullAndEmpty(String carName){
         if(carName.isEmpty() || carName == null) throw new IllegalArgumentException();
     }
 
-    public static void validateRacingCarNameLengthFive(String carName) {
+    private static void validateRacingCarNameLengthFive(String carName) {
         if (carName.length() < MIN_CAR_NAME_INPUT || carName.length() > MAX_CAR_NAME_INPUT) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private static void validateRacingCarNameBlank(String carName){
+        if(carName.contains(CAR_NAME_BLANK)) throw new IllegalArgumentException();
     }
 
     @Override

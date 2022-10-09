@@ -28,6 +28,13 @@ public class RacingCarNameTest {
         });
     }
 
-
+    @DisplayName("자동차 이름 공백 있으면 예외 발생")
+    @ParameterizedTest
+    @ValueSource(strings = {"ra y"})
+    public void throwExceptionWhenCarNameContainsBlank(String input){
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            new RacingCarName(input);
+        });
+    }
 
 }
