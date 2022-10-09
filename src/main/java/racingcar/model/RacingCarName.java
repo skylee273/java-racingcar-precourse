@@ -19,7 +19,7 @@ public class RacingCarName {
         this.carName = carName;
     }
 
-    public String getCarName() {
+    public String getName() {
         return this.carName;
     }
 

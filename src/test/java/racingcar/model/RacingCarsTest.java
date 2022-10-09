@@ -48,8 +48,8 @@ public class RacingCarsTest {
         List<WinningRacingCar> winningRacingCars = racingCars.winningCar(maxPosition);
 
         assertThat(winningRacingCars.size()).isEqualTo(1);
-        assertThat(winningRacingCars.get(0).getWinningRacingCar().getRacingCarName().getCarName()).isEqualTo("ray");
-        assertThat(winningRacingCars.get(0).getWinningRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
+        assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarName().getName()).isEqualTo("ray");
+        assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
 
     }
 
@@ -69,10 +69,10 @@ public class RacingCarsTest {
         List<WinningRacingCar> winningRacingCars = racingCars.winningCar(maxPosition);
 
         assertThat(winningRacingCars.size()).isEqualTo(2);
-        assertThat(winningRacingCars.get(0).getWinningRacingCar().getRacingCarName().getCarName()).isEqualTo("ray");
-        assertThat(winningRacingCars.get(1).getWinningRacingCar().getRacingCarName().getCarName()).isEqualTo("benz");
-        assertThat(winningRacingCars.get(0).getWinningRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
-        assertThat(winningRacingCars.get(1).getWinningRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
+        assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarName().getName()).isEqualTo("ray");
+        assertThat(winningRacingCars.get(1).getRacingCar().getRacingCarName().getName()).isEqualTo("benz");
+        assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
+        assertThat(winningRacingCars.get(1).getRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
 
     }
 

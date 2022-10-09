@@ -7,7 +7,7 @@ public class WinningRacingCar {
         this.racingCar = racingCar;
     }
 
-    public RacingCar getWinningRacingCar() {
+    public RacingCar getRacingCar() {
         return this.racingCar;
     }
 }

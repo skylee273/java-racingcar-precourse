@@ -37,6 +37,10 @@ public class RacingCars {
         return winningRacingCars;
     }
 
+    public List<RacingCar> getRacingCars() {
+        return this.racingCars;
+    }
+
     public RacingCar getRacingCar(int index) {
         return racingCars.get(index);
     }
