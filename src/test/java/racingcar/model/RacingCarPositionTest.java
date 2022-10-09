@@ -15,16 +15,7 @@ public class RacingCarPositionTest {
     public void validateCarMoveForwardTest() {
         RacingCarPosition racingCarPosition = new RacingCarPosition(0);
         racingCarPosition.moveForward();
-        assertThat(racingCarPosition.get()).isEqualTo(1);
-    }
-
-
-    @DisplayName("자동차 전진 후 스탑 테스트")
-    @Test
-    public void validateCarMoveForwardAndMoveStopTest() {
-        RacingCarPosition racingCarPosition = new RacingCarPosition(0);
-        racingCarPosition.moveForward();
-        assertThat(racingCarPosition.get()).isEqualTo(1);
+        assertThat(racingCarPosition).isEqualTo(new RacingCarPosition(1));
     }
 
     @DisplayName("자동차 위치 음수 값 오류")

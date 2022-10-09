@@ -19,13 +19,25 @@ public class RacingCarTest {
 
         racingCar.move(() -> true);
 
-        assertThat(racingCar.getRacingCarPosition().get()).isEqualTo(1);
+        assertThat(racingCar.getRacingCarPosition()).isEqualTo(new RacingCarPosition(1));
+    }
+
+    @DisplayName("자동차 정지 테스트")
+    @Test
+    public void validateCarStopTest() {
+
+        RacingCar racingCar = new RacingCar("ray");
+
+        racingCar.move(() -> false);
+
+        assertThat(racingCar.getRacingCarPosition()).isEqualTo(new RacingCarPosition(0));
     }
 
     @DisplayName("null 또는 공백 문자열이 입력되면 예외를 리턴한다.")
     @ParameterizedTest
     @NullAndEmptySource
-    public void throwExceptionWhenCardNameNull(String input) {
+    public void throwExceptionWhenCarNameNull(String input) {
+
         assertThatThrownBy(() -> {
             new RacingCarName(input);
         }).isInstanceOf(RuntimeException.class);
@@ -34,10 +46,59 @@ public class RacingCarTest {
     @DisplayName("자동차 이름 5글자 이상 테스트")
     @ParameterizedTest
     @ValueSource(strings = {"sonata"})
-    public void throwExceptionWhenCardNameLargeThanFive(String input) {
+    public void throwExceptionWhenCarNameLargeThanFive(String input) {
         assertThatIllegalArgumentException().isThrownBy(() -> {
             new RacingCarName(input);
         });
+    }
+
+    @DisplayName("자동차 이름 빈값 테스트")
+    @ParameterizedTest
+    @ValueSource(strings = {" "})
+    public void throwExceptionWhenCarNameContainsBlank(String input) {
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            new RacingCarName(input);
+        });
+    }
+
+    @DisplayName("자동차 같은 위치 테스트")
+    @Test
+    public void racingCarIsSamePositionTest(){
+        RacingCar racingCar = new RacingCar("ray");
+        RacingCar racingCar1 = new RacingCar("benz");
+
+        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+
+        assertThat(samePositionRacingCar.getRacingCarPosition()).isEqualTo(racingCar1.getRacingCarPosition());
+    }
+
+    @DisplayName("자동차 같은 위치 테스트2")
+    @Test
+    public void racingCarIsSamePositionTest2(){
+        RacingCar racingCar = new RacingCar("ray");
+        RacingCar racingCar1 = new RacingCar("benz");
+
+        racingCar.move(()-> true);
+        racingCar1.move(()-> true);
+
+        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+
+        assertThat(samePositionRacingCar.getRacingCarPosition()).isEqualTo(racingCar1.getRacingCarPosition());
+    }
+
+    @DisplayName("자동차 다른 위치 테스트")
+    @Test
+    public void racingCarIsNotSamePositionTest(){
+        RacingCar racingCar = new RacingCar("ray");
+        RacingCar racingCar1 = new RacingCar("benz");
+
+        racingCar.move(()-> true);
+        racingCar1.move(()-> false);
+
+        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+
+        assertThat(samePositionRacingCar.getRacingCarPosition()).isNotEqualTo(racingCar1.getRacingCarPosition());
+
     }
 
 
