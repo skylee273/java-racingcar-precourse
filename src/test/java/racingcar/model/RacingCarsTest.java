@@ -1,14 +1,8 @@
 package racingcar.model;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.*;
@@ -18,9 +12,9 @@ public class RacingCarsTest {
 
     @DisplayName("중복된 자동차 이름 예외 발생")
     @Test
-    public void throwExceptionWhenDuplicateCarName(){
+    public void throwExceptionWhenDuplicateCarName() {
         assertThatIllegalArgumentException().isThrownBy(() -> {
-             new RacingCars(asList(new RacingCar("ray"), new RacingCar("ray")));
+            new RacingCars(asList(new RacingCar("ray"), new RacingCar("ray")));
         });
     }
 
@@ -28,7 +22,7 @@ public class RacingCarsTest {
     @Test
     public void allRacingCarWinnerTest() {
 
-        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz") );
+        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz"));
 
         RacingCars racingCars = new RacingCars(cars);
 
@@ -43,7 +37,7 @@ public class RacingCarsTest {
     @DisplayName("우승자가 한 명일 경우에 대해서 테스트")
     public void winnerRayTest() {
 
-        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz") );
+        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz"));
 
         RacingCars racingCars = new RacingCars(cars);
 
@@ -63,7 +57,7 @@ public class RacingCarsTest {
     @DisplayName("우승자가 N명일 경우에 대해서 테스트")
     public void winnerNTest() {
 
-        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz") );
+        List<RacingCar> cars = asList(new RacingCar("ray"), new RacingCar("volvo"), new RacingCar("benz"));
 
         RacingCars racingCars = new RacingCars(cars);
 
@@ -81,7 +75,6 @@ public class RacingCarsTest {
         assertThat(winningRacingCars.get(1).getWinningRacingCar().getRacingCarPosition()).isEqualTo(maxPosition);
 
     }
-
 
 
 }

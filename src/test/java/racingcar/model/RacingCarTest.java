@@ -1,6 +1,5 @@
 package racingcar.model;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -63,7 +62,7 @@ public class RacingCarTest {
 
     @DisplayName("자동차 같은 위치 테스트")
     @Test
-    public void racingCarIsSamePositionTest(){
+    public void racingCarIsSamePositionTest() {
         RacingCar racingCar = new RacingCar("ray");
         RacingCar racingCar1 = new RacingCar("benz");
 
@@ -74,12 +73,12 @@ public class RacingCarTest {
 
     @DisplayName("자동차 같은 위치 테스트2")
     @Test
-    public void racingCarIsSamePositionTest2(){
+    public void racingCarIsSamePositionTest2() {
         RacingCar racingCar = new RacingCar("ray");
         RacingCar racingCar1 = new RacingCar("benz");
 
-        racingCar.move(()-> true);
-        racingCar1.move(()-> true);
+        racingCar.move(() -> true);
+        racingCar1.move(() -> true);
 
         boolean samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
 
@@ -88,12 +87,12 @@ public class RacingCarTest {
 
     @DisplayName("자동차 다른 위치 테스트")
     @Test
-    public void racingCarIsNotSamePositionTest(){
+    public void racingCarIsNotSamePositionTest() {
         RacingCar racingCar = new RacingCar("ray");
         RacingCar racingCar1 = new RacingCar("benz");
 
-        racingCar.move(()-> true);
-        racingCar1.move(()-> false);
+        racingCar.move(() -> true);
+        racingCar1.move(() -> false);
 
         boolean samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
 

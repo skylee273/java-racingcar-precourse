@@ -12,7 +12,7 @@ class CoinTest {
     @DisplayName("숫자 이외의 값이 입력되면 예외를 리턴한다")
     @ParameterizedTest
     @ValueSource(ints = {-1})
-    void convertToNumberTest(int input){
+    void convertToNumberTest(int input) {
         assertThatIllegalArgumentException().isThrownBy(() -> {
             new Coin(input);
         });
