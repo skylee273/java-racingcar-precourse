@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static racingcar.utils.ConvertUtil.*;
 
 public class ConvertUtilTest {
 
@@ -13,7 +14,7 @@ public class ConvertUtilTest {
     @ValueSource(strings = {"1,@,3", "10,2,3:=", "%,),2:*"})
     void convertToNumberTest(String input){
         assertThatThrownBy(() -> {
-            ConvertUtil.convertStringToInteger(input);
+            convertStringToInteger(input);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 }
