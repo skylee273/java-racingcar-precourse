@@ -2,6 +2,8 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RANDOM_NUMBER_IN_RANGE_ZERO_TO_NINE;
+
 public class RandomNumber {
 
     private static final int MIN_NUM = 0;
@@ -21,7 +23,7 @@ public class RandomNumber {
     }
 
     private static void isRandomNumberInRange(int random) {
-        if(random < 0 || random > 9) throw new IllegalArgumentException();
+        if(random < MIN_NUM || random > MAX_NUM) throw new IllegalArgumentException(ERROR_RANDOM_NUMBER_IN_RANGE_ZERO_TO_NINE);
     }
 
 }

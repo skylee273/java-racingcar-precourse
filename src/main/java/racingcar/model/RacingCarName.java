@@ -2,6 +2,8 @@ package racingcar.model;
 
 import java.util.Objects;
 
+import static racingcar.constant.RacingCarGameErrorMessage.*;
+
 public class RacingCarName {
 
     private static final int MAX_CAR_NAME_INPUT = 5;
@@ -11,7 +13,7 @@ public class RacingCarName {
     private String carName;
 
     public RacingCarName(String carName){
-        validateRacingCarNameNullAndEmpty(carName);
+        validateRacingCarNameNullOrEmpty(carName);
         validateRacingCarNameLengthFive(carName);
         validateRacingCarNameBlank(carName);
         this.carName = carName;
@@ -21,18 +23,18 @@ public class RacingCarName {
         return this.carName;
     }
 
-    private static void validateRacingCarNameNullAndEmpty(String carName){
-        if(carName.isEmpty() || carName == null) throw new IllegalArgumentException();
+    private static void validateRacingCarNameNullOrEmpty(String carName){
+        if(carName.isEmpty() || carName == null) throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_NULL_OR_EMPTY);
     }
 
     private static void validateRacingCarNameLengthFive(String carName) {
         if (carName.length() < MIN_CAR_NAME_INPUT || carName.length() > MAX_CAR_NAME_INPUT) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_LENGTH_LESS_FIVE);
         }
     }
 
     private static void validateRacingCarNameBlank(String carName){
-        if(carName.contains(CAR_NAME_BLANK)) throw new IllegalArgumentException();
+        if(carName.contains(CAR_NAME_BLANK)) throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_BLANK);
     }
 
     @Override

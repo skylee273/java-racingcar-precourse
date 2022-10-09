@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CARS_NAME_NOT_DUPLICATE;
+
 public class RacingCars {
 
     private List<RacingCar> racingCars;
@@ -43,7 +45,7 @@ public class RacingCars {
         Set<RacingCar> racingCarSet = new HashSet<>(racingCars);
 
         if (racingCarSet.size() != racingCars.size()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ERROR_RACING_CARS_NAME_NOT_DUPLICATE);
         }
     }
 

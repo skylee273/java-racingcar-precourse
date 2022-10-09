@@ -3,6 +3,8 @@ package racingcar.model;
 
 import java.util.Objects;
 
+import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CAR_POSITION_NOT_NEGATIVE;
+
 public class RacingCarPosition {
 
     private static final int ZERO = 0;
@@ -11,7 +13,7 @@ public class RacingCarPosition {
     private int position;
 
     public RacingCarPosition(int position) {
-        validateRacingCardPositionPositive(position);
+        validateRacingCarPositionPositive(position);
         this.position = position;
     }
 
@@ -23,8 +25,8 @@ public class RacingCarPosition {
         return this.position;
     }
 
-    private static void validateRacingCardPositionPositive(int position) {
-        if (position < ZERO) throw new IllegalArgumentException();
+    private static void validateRacingCarPositionPositive(int position) {
+        if (position < ZERO) throw new IllegalArgumentException(ERROR_RACING_CAR_POSITION_NOT_NEGATIVE);
     }
 
     @Override
