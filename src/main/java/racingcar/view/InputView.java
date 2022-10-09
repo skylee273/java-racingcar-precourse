@@ -20,6 +20,7 @@ public class InputView {
     private static String[] splitByComma(String input) {
         return input.split(",");
     }
+
     private static void printMessage(String message) {
         System.out.println(message);
     }

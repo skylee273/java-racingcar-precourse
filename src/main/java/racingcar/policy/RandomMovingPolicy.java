@@ -3,7 +3,7 @@ package racingcar.policy;
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.model.RandomNumber;
 
-public class RandomMovingPolicy implements MovingPolicy{
+public class RandomMovingPolicy implements MovingPolicy {
 
     private static final int MIN_NUM = 0;
     private static final int MAX_NUM = 9;

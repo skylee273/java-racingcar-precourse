@@ -6,7 +6,7 @@ import static racingcar.utils.StringUtil.*;
 
 public class ScannerUtil {
 
-    public static String readLine(){
+    public static String readLine() {
         String stringInput = Console.readLine();
         validateNullAndEmpty(isNullOrEmpty(stringInput));
         return stringInput;

@@ -1,7 +1,5 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RANDOM_NUMBER_IN_RANGE_ZERO_TO_NINE;
 
 public class RandomNumber {
@@ -13,7 +11,7 @@ public class RandomNumber {
 
     private static final int CAR_FORWARD_MOVE_CONDITION = 4;
 
-    public RandomNumber(int randomNumber){
+    public RandomNumber(int randomNumber) {
         isRandomNumberInRange(randomNumber);
         this.randomNumber = randomNumber;
     }
@@ -23,7 +21,8 @@ public class RandomNumber {
     }
 
     private static void isRandomNumberInRange(int random) {
-        if(random < MIN_NUM || random > MAX_NUM) throw new IllegalArgumentException(ERROR_RANDOM_NUMBER_IN_RANGE_ZERO_TO_NINE);
+        if (random < MIN_NUM || random > MAX_NUM)
+            throw new IllegalArgumentException(ERROR_RANDOM_NUMBER_IN_RANGE_ZERO_TO_NINE);
     }
 
 }

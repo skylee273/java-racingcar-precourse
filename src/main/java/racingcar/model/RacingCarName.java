@@ -12,19 +12,20 @@ public class RacingCarName {
 
     private String carName;
 
-    public RacingCarName(String carName){
+    public RacingCarName(String carName) {
         validateRacingCarNameNullOrEmpty(carName);
         validateRacingCarNameLengthFive(carName);
         validateRacingCarNameBlank(carName);
         this.carName = carName;
     }
 
-    public String getCarName(){
+    public String getCarName() {
         return this.carName;
     }
 
-    private static void validateRacingCarNameNullOrEmpty(String carName){
-        if(carName.isEmpty() || carName == null) throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_NULL_OR_EMPTY);
+    private static void validateRacingCarNameNullOrEmpty(String carName) {
+        if (carName.isEmpty() || carName == null)
+            throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_NULL_OR_EMPTY);
     }
 
     private static void validateRacingCarNameLengthFive(String carName) {
@@ -33,8 +34,8 @@ public class RacingCarName {
         }
     }
 
-    private static void validateRacingCarNameBlank(String carName){
-        if(carName.contains(CAR_NAME_BLANK)) throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_BLANK);
+    private static void validateRacingCarNameBlank(String carName) {
+        if (carName.contains(CAR_NAME_BLANK)) throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_BLANK);
     }
 
     @Override

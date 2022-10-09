@@ -19,7 +19,7 @@ public class RacingCars {
     }
 
     public void moveForwardWithAllRacingCar(MovingPolicy movingPolicy) {
-        for(RacingCar racingCar : racingCars) racingCar.move(movingPolicy);
+        for (RacingCar racingCar : racingCars) racingCar.move(movingPolicy);
     }
 
     public RacingCarPosition getMaxPosition() {
@@ -30,14 +30,14 @@ public class RacingCars {
     public List<WinningRacingCar> winningCar(RacingCarPosition maxRacingCarPosition) {
         List<WinningRacingCar> winningRacingCars = new ArrayList<>();
         for (RacingCar car : racingCars) {
-            if(car.isSamePositionRacingCar(maxRacingCarPosition)) {
+            if (car.isSamePositionRacingCar(maxRacingCarPosition)) {
                 winningRacingCars.add(new WinningRacingCar(car));
             }
         }
         return winningRacingCars;
     }
 
-    public RacingCar getRacingCar(int index){
+    public RacingCar getRacingCar(int index) {
         return racingCars.get(index);
     }
 

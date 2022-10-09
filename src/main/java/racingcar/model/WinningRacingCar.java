@@ -1,7 +1,5 @@
 package racingcar.model;
 
-import java.util.List;
-
 public class WinningRacingCar {
     private RacingCar racingCar;
 

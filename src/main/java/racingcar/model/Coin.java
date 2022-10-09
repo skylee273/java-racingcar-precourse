@@ -14,18 +14,19 @@ public class Coin {
         this.coin = coin;
     }
 
-    public void useCoin(){
+    public void useCoin() {
         this.coin--;
     }
 
     public int get() {
         return this.coin;
     }
+
     public boolean isContinue() {
         return this.coin != GAME_END_CONDITION;
     }
 
-    private static void validatePositive(int coin){
-        if(coin < ZERO) throw new IllegalArgumentException(ERROR_COIN_NEGATIVE_MESSAGE);
+    private static void validatePositive(int coin) {
+        if (coin < ZERO) throw new IllegalArgumentException(ERROR_COIN_NEGATIVE_MESSAGE);
     }
 }

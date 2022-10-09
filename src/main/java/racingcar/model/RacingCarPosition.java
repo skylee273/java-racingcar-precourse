@@ -18,10 +18,10 @@ public class RacingCarPosition {
     }
 
     public void moveForward() {
-         this.position++;
+        this.position++;
     }
 
-    public int get(){
+    public int get() {
         return this.position;
     }
 

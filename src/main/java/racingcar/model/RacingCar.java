@@ -11,21 +11,22 @@ public class RacingCar {
     private RacingCarName racingCarName;
     private RacingCarPosition racingCarPosition;
 
-    public RacingCar(String carName){
+    public RacingCar(String carName) {
         this.racingCarName = new RacingCarName(carName);
         this.racingCarPosition = new RacingCarPosition(POSITION_INITIAL);
     }
 
-    public void move(MovingPolicy movingPolicy){
-        if(movingPolicy.isMovable()) {
+    public void move(MovingPolicy movingPolicy) {
+        if (movingPolicy.isMovable()) {
             this.racingCarPosition.moveForward();
         }
     }
 
-    public RacingCarName getRacingCarName(){
+    public RacingCarName getRacingCarName() {
         return this.racingCarName;
     }
-    public RacingCarPosition getRacingCarPosition(){
+
+    public RacingCarPosition getRacingCarPosition() {
         return this.racingCarPosition;
     }
 
