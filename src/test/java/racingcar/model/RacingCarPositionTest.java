@@ -14,23 +14,17 @@ public class RacingCarPositionTest {
     @Test
     public void validateCarMoveForwardTest() {
         RacingCarPosition racingCarPosition = new RacingCarPosition(0);
-        assertThat(racingCarPosition.moveForward()).isEqualTo(1);
-        assertThat(racingCarPosition.moveForward()).isEqualTo(2);
+        racingCarPosition.moveForward();
+        assertThat(racingCarPosition.get()).isEqualTo(1);
     }
 
-    @DisplayName("자동차 스탑 테스트")
-    @Test
-    public void validateCarMoveStopTest() {
-        RacingCarPosition racingCarPosition = new RacingCarPosition(0);
-        assertThat(racingCarPosition.moveStop()).isEqualTo(0);
-    }
 
     @DisplayName("자동차 전진 후 스탑 테스트")
     @Test
     public void validateCarMoveForwardAndMoveStopTest() {
         RacingCarPosition racingCarPosition = new RacingCarPosition(0);
-        assertThat(racingCarPosition.moveForward()).isEqualTo(1);
-        assertThat(racingCarPosition.moveStop()).isEqualTo(1);
+        racingCarPosition.moveForward();
+        assertThat(racingCarPosition.get()).isEqualTo(1);
     }
 
     @DisplayName("자동차 위치 음수 값 오류")
@@ -40,16 +34,6 @@ public class RacingCarPositionTest {
         assertThatIllegalArgumentException().isThrownBy(() -> {
             new RacingCarPosition(input);
         });
-    }
-
-    @DisplayName("자동차 3회 전진 후 포지션 상태")
-    @Test
-    public void validateCarThreeMoveForwardPosition() {
-        RacingCarPosition racingCarPosition = new RacingCarPosition(0);
-        racingCarPosition.moveForward();
-        racingCarPosition.moveForward();
-        racingCarPosition.moveForward();
-        assertThat(racingCarPosition.toString()).isEqualTo("---");
     }
 
 

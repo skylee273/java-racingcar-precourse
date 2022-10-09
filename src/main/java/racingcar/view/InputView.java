@@ -1,21 +1,20 @@
 package racingcar.view;
 
-import racingcar.utils.ConvertUtil;
-import racingcar.utils.ScannerUtil;
-
 import static racingcar.constant.RacingGameMessage.RACING_CAR_NAME_INPUT;
 import static racingcar.constant.RacingGameMessage.RACING_CAR_TRY_COUNT_INPUT;
+import static racingcar.utils.ConvertUtil.*;
+import static racingcar.utils.ScannerUtil.*;
 
 public class InputView {
 
-    public static String[] RacingCardInputNames() {
+    public static String[] RacingCarInputNames() {
         printMessage(RACING_CAR_NAME_INPUT);
-        return splitByComma(ScannerUtil.readLine());
+        return splitByComma(readLine());
     }
 
-    public static int RacingCardInputsTry() {
+    public static int RacingCarInputsTry() {
         printMessage(RACING_CAR_TRY_COUNT_INPUT);
-        return ConvertUtil.convertStringToInteger(ScannerUtil.readLine());
+        return convertStringToInteger(readLine());
     }
 
     private static String[] splitByComma(String input) {
