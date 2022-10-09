@@ -1,0 +1,41 @@
+package racingcar.model;
+
+import racingcar.policy.MovingPolicy;
+
+import java.util.Objects;
+
+public class RacingCar {
+
+    private static final int POSITION_INITIAL = 0;
+
+    private RacingCarName racingCarName;
+    private RacingCarPosition racingCarPosition;
+
+    public RacingCar(String carName){
+        this.racingCarName = new RacingCarName(carName);
+        this.racingCarPosition = new RacingCarPosition(POSITION_INITIAL);
+    }
+
+    public void move(MovingPolicy movingPolicy){
+        if(movingPolicy.isMovable()) {
+            this.racingCarPosition.moveForward();
+        }
+    }
+
+    public RacingCarPosition getRacingCarPosition(){
+        return this.racingCarPosition;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RacingCar racingCar = (RacingCar) o;
+        return Objects.equals(racingCarName, racingCar.racingCarName) && Objects.equals(racingCarPosition, racingCar.racingCarPosition);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(racingCarName, racingCarPosition);
+    }
+}
