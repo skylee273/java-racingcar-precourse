@@ -67,9 +67,9 @@ public class RacingCarTest {
         RacingCar racingCar = new RacingCar("ray");
         RacingCar racingCar1 = new RacingCar("benz");
 
-        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+        boolean samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
 
-        assertThat(samePositionRacingCar.getRacingCarPosition()).isEqualTo(racingCar1.getRacingCarPosition());
+        assertThat(samePositionRacingCar).isTrue();
     }
 
     @DisplayName("자동차 같은 위치 테스트2")
@@ -81,9 +81,9 @@ public class RacingCarTest {
         racingCar.move(()-> true);
         racingCar1.move(()-> true);
 
-        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+        boolean samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
 
-        assertThat(samePositionRacingCar.getRacingCarPosition()).isEqualTo(racingCar1.getRacingCarPosition());
+        assertThat(samePositionRacingCar).isTrue();
     }
 
     @DisplayName("자동차 다른 위치 테스트")
@@ -95,9 +95,9 @@ public class RacingCarTest {
         racingCar.move(()-> true);
         racingCar1.move(()-> false);
 
-        RacingCar samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
+        boolean samePositionRacingCar = racingCar.isSamePositionRacingCar(racingCar1.getRacingCarPosition());
 
-        assertThat(samePositionRacingCar.getRacingCarPosition()).isNotEqualTo(racingCar1.getRacingCarPosition());
+        assertThat(samePositionRacingCar).isFalse();
 
     }
 

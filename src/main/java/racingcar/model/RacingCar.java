@@ -22,8 +22,15 @@ public class RacingCar {
         }
     }
 
+    public RacingCarName getRacingCarName(){
+        return this.racingCarName;
+    }
     public RacingCarPosition getRacingCarPosition(){
         return this.racingCarPosition;
+    }
+
+    public boolean isSamePositionRacingCar(RacingCarPosition racingCarPosition) {
+        return this.racingCarPosition.equals(racingCarPosition);
     }
 
     @Override

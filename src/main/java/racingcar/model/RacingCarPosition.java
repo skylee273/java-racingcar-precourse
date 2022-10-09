@@ -10,7 +10,7 @@ public class RacingCarPosition {
 
     private int position;
 
-    public RacingCarPosition(final int position) {
+    public RacingCarPosition(int position) {
         validateRacingCardPositionPositive(position);
         this.position = position;
     }

@@ -2,6 +2,7 @@ package racingcar.model;
 
 import racingcar.policy.MovingPolicy;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -17,6 +18,25 @@ public class RacingCars {
 
     public void moveForwardWithAllRacingCar(MovingPolicy movingPolicy) {
         for(RacingCar racingCar : racingCars) racingCar.move(movingPolicy);
+    }
+
+    public RacingCarPosition getMaxPosition() {
+        racingCars.sort(((o1, o2) -> o2.getRacingCarPosition().get() - o1.getRacingCarPosition().get()));
+        return racingCars.get(0).getRacingCarPosition();
+    }
+
+    public List<WinningRacingCar> winningCar(RacingCarPosition maxRacingCarPosition) {
+        List<WinningRacingCar> winningRacingCars = new ArrayList<>();
+        for (RacingCar car : racingCars) {
+            if(car.isSamePositionRacingCar(maxRacingCarPosition)) {
+                winningRacingCars.add(new WinningRacingCar(car));
+            }
+        }
+        return winningRacingCars;
+    }
+
+    public RacingCar getRacingCar(int index){
+        return racingCars.get(index);
     }
 
     private void validateDuplication(List<RacingCar> racingCars) {

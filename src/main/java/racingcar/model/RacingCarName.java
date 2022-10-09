@@ -17,6 +17,10 @@ public class RacingCarName {
         this.carName = carName;
     }
 
+    public String getCarName(){
+        return this.carName;
+    }
+
     private static void validateRacingCarNameNullAndEmpty(String carName){
         if(carName.isEmpty() || carName == null) throw new IllegalArgumentException();
     }
