@@ -7,6 +7,8 @@ import static racingcar.utils.ScannerUtil.*;
 
 public class InputView {
 
+    private static final String COMMA = ",";
+
     public static String[] RacingCarInputNames() {
         printMessage(RACING_CAR_NAME_INPUT);
         return splitByComma(readLine());
@@ -18,7 +20,7 @@ public class InputView {
     }
 
     private static String[] splitByComma(String input) {
-        return input.split(",");
+        return input.split(COMMA);
     }
 
     private static void printMessage(String message) {

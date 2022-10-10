@@ -7,7 +7,7 @@ public class RandomNumber {
     private static final int MIN_NUM = 0;
     private static final int MAX_NUM = 9;
 
-    private int randomNumber;
+    private final int randomNumber;
 
     private static final int CAR_FORWARD_MOVE_CONDITION = 4;
 

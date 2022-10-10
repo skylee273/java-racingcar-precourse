@@ -8,7 +8,6 @@ import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CAR_POSI
 public class RacingCarPosition {
 
     private static final int ZERO = 0;
-    private static final int FORWARD = 1;
 
     private int position;
 

@@ -1,7 +1,7 @@
 package racingcar.model;
 
 public class WinningRacingCar {
-    private RacingCar racingCar;
+    private final RacingCar racingCar;
 
     public WinningRacingCar(RacingCar racingCar) {
         this.racingCar = racingCar;

@@ -10,7 +10,7 @@ public class RacingCarName {
     private static final int MIN_CAR_NAME_INPUT = 1;
     private static final String CAR_NAME_BLANK = " ";
 
-    private String carName;
+    private final String carName;
 
     public RacingCarName(String carName) {
         validateRacingCarNameNullOrEmpty(carName);
@@ -24,7 +24,7 @@ public class RacingCarName {
     }
 
     private static void validateRacingCarNameNullOrEmpty(String carName) {
-        if (carName.isEmpty() || carName == null)
+        if (carName.isEmpty())
             throw new IllegalArgumentException(ERROR_RACING_CAR_NAME_NOT_NULL_OR_EMPTY);
     }
 

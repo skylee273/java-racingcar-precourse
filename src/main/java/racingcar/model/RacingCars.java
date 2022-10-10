@@ -2,10 +2,7 @@ package racingcar.model;
 
 import racingcar.policy.MovingPolicy;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CARS_NAME_NOT_DUPLICATE;
 
@@ -15,7 +12,7 @@ public class RacingCars {
 
     public RacingCars(List<RacingCar> racingCars) {
         validateDuplication(racingCars);
-        this.racingCars = racingCars;
+        this.racingCars = Collections.unmodifiableList(racingCars);
     }
 
     public void moveForwardWithAllRacingCar(MovingPolicy movingPolicy) {
@@ -23,8 +20,9 @@ public class RacingCars {
     }
 
     public RacingCarPosition getMaxPosition() {
-        racingCars.sort(((o1, o2) -> o2.getRacingCarPosition().get() - o1.getRacingCarPosition().get()));
-        return racingCars.get(0).getRacingCarPosition();
+        int max = Integer.MIN_VALUE;
+        for (RacingCar racingCar : racingCars) max = Math.max(racingCar.getRacingCarPosition().get(), max);
+        return new RacingCarPosition(max);
     }
 
     public List<WinningRacingCar> winningCar(RacingCarPosition maxRacingCarPosition) {

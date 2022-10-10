@@ -5,7 +5,7 @@ import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CAR_NAME
 public class StringUtil {
 
     public static boolean isNullOrEmpty(String input) {
-        return (input.isEmpty() || input == null);
+        return input.isEmpty();
     }
 
     public static void validateNullAndEmpty(boolean isNullOrEmpty) {

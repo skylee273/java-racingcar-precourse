@@ -19,7 +19,7 @@ public class RacingCarNameTest {
 
     @DisplayName("자동차 이름 5보다 크면 예외 발생")
     @ParameterizedTest
-    @ValueSource(strings = {"abcdef"})
+    @ValueSource(strings = {"porsche"})
     public void throwExceptionWhenCardNameLargeThanFive(String input) {
         assertThatIllegalArgumentException().isThrownBy(() -> {
             new RacingCarName(input);
