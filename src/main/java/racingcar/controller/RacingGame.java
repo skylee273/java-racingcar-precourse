@@ -14,6 +14,8 @@ import static racingcar.view.OutputView.*;
 
 public class RacingGame {
 
+    private static final int ERROR_POINT_COIN_STEP = 2;
+
     private RacingCars racingCars;
     private Coin coin;
     private final MovingPolicy movingPolicy = new RandomMovingPolicy();
@@ -24,7 +26,7 @@ public class RacingGame {
     }
 
     public void ready() {
-        if(this.errorPoint != 2) {
+        if(this.errorPoint != ERROR_POINT_COIN_STEP) {
             readyRaceParticipant();
         }
         readyRaceCoin();
@@ -43,7 +45,7 @@ public class RacingGame {
     }
 
     public void createErrorPoint(String errorMessage) {
-        if(ERROR_COIN_NEGATIVE_MESSAGE.equals(errorMessage)) this.errorPoint = 2;
+        if(ERROR_COIN_NEGATIVE_MESSAGE.equals(errorMessage)) this.errorPoint = ERROR_POINT_COIN_STEP;
     }
 
     private void readyRaceParticipant() {

@@ -8,8 +8,8 @@ public class RacingCar {
 
     private static final int POSITION_INITIAL = 0;
 
-    private RacingCarName racingCarName;
-    private RacingCarPosition racingCarPosition;
+    private final RacingCarName racingCarName;
+    private final RacingCarPosition racingCarPosition;
 
     public RacingCar(String carName) {
         this.racingCarName = new RacingCarName(carName);

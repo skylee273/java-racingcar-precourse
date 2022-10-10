@@ -8,7 +8,7 @@ import static racingcar.constant.RacingCarGameErrorMessage.ERROR_RACING_CARS_NAM
 
 public class RacingCars {
 
-    private List<RacingCar> racingCars;
+    private final List<RacingCar> racingCars;
 
     public RacingCars(List<RacingCar> racingCars) {
         validateDuplication(racingCars);
