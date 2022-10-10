@@ -76,7 +76,7 @@ public class RacingGame {
 
 
     private List<WinningRacingCar> getWinners() {
-        return racingCars.winningCar(racingCars.getMaxPosition());
+        return racingCars.winningCars(racingCars.getMaxPosition());
     }
 
 }

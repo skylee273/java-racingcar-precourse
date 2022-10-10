@@ -25,7 +25,7 @@ public class RacingCars {
         return new RacingCarPosition(max);
     }
 
-    public List<WinningRacingCar> winningCar(RacingCarPosition maxRacingCarPosition) {
+    public List<WinningRacingCar> winningCars(RacingCarPosition maxRacingCarPosition) {
         List<WinningRacingCar> winningRacingCars = new ArrayList<>();
         for (RacingCar car : racingCars) {
             if (car.isSamePositionRacingCar(maxRacingCarPosition)) {
@@ -42,7 +42,7 @@ public class RacingCars {
     public RacingCar getRacingCar(int index) {
         return racingCars.get(index);
     }
-
+    
     private void validateDuplication(List<RacingCar> racingCars) {
         Set<RacingCar> racingCarSet = new HashSet<>(racingCars);
 

@@ -28,7 +28,7 @@ public class RacingCarsTest {
 
         racingCars.moveForwardWithAllRacingCar(() -> true);
 
-        List<WinningRacingCar> winningRacingCars = racingCars.winningCar(new RacingCarPosition(1));
+        List<WinningRacingCar> winningRacingCars = racingCars.winningCars(new RacingCarPosition(1));
 
         assertThat(winningRacingCars.size()).isEqualTo(3);
     }
@@ -45,7 +45,7 @@ public class RacingCarsTest {
 
         RacingCarPosition maxPosition = racingCars.getMaxPosition();
 
-        List<WinningRacingCar> winningRacingCars = racingCars.winningCar(maxPosition);
+        List<WinningRacingCar> winningRacingCars = racingCars.winningCars(maxPosition);
 
         assertThat(winningRacingCars.size()).isEqualTo(1);
         assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarName().getName()).isEqualTo("ray");
@@ -66,7 +66,7 @@ public class RacingCarsTest {
 
         RacingCarPosition maxPosition = racingCars.getMaxPosition();
 
-        List<WinningRacingCar> winningRacingCars = racingCars.winningCar(maxPosition);
+        List<WinningRacingCar> winningRacingCars = racingCars.winningCars(maxPosition);
 
         assertThat(winningRacingCars.size()).isEqualTo(2);
         assertThat(winningRacingCars.get(0).getRacingCar().getRacingCarName().getName()).isEqualTo("ray");
